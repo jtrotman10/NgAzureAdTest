@@ -33,9 +33,9 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     AppRoutingModule,
     MsalModule.forRoot({
       auth: {
-        clientId: 'Enter_the_Application_Id_Here',
-        authority: 'Enter_the_Cloud_Instance_Id_HereEnter_the_Tenant_Info_Here',
-        redirectUri: 'Enter_the_Redirect_Uri_Here',
+        clientId: 'c90a993e-34ee-4ec5-a05a-3ad488613bef',
+        authority: 'https://login.microsoftonline.com/3e9b0d3e-2806-47a1-af36-7869a429e9de',
+        redirectUri: window.location.port ? window.location.protocol + '//' + window.location.hostname + '/' : window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/',
       },
       cache: {
         cacheLocation: 'localStorage',
@@ -50,7 +50,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         'profile',
       ],
       protectedResourceMap: [
-        ['Enter_the_Graph_Endpoint_Herev1.0/me', ['user.read']]
+        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
       ],
       extraQueryParameters: {}
     })
